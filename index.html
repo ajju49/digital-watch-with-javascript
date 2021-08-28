@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="display">
+            <div id="clock"></div>
+        </div>
+        <span></span>
+        <span></span>
+    </div>
+    
+    <script>
+   
+    setInterval(displayclock, 500);
+    function displayclock () {
+        var time = new Date();
+        var hrs = time.getHours();
+        var min = time.getMinutes();
+        var sec = time.getSeconds();
+        let day_night = "PM";
+
+        if (hrs > 12){
+            day_night = "PM";
+            hrs = hrs - 12;
+        }
+        if (hrs == 0){
+            hrs = 12;
+        }
+        if (hrs<10){
+            hrs = '0'+ hrs;
+        }
+        if (min<10){
+            mins = '0'+ mins;
+        }
+        if (sec<10){
+            sec = '0'+ sec;
+        }
+
+        document.getElementById('clock').innerHTML = hrs + ':' + min + ':' + sec + " " + day_night ; 
+
+
+
+
+
+    }
+
+
+
+
+
+
+    </script>
+</body>
+</html>
